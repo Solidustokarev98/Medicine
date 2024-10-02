@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Medicine.Models.DrugAvailability>
+
+<h2>Доступность лекарств</h2>
+
+<table style="border-collapse: collapse;">
+    <thead>
+        <tr>
+            <th style="border: 1px solid #ddd;"> Название препарата </th>
+            <th style ="border: 1px solid #ddd;"> Доступность </th>
+            <th style="border: 1px solid #ddd;"> Количество </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var drugAvailability in Model)
+        {
+            <tr>
+                <td style="border: 1px solid #ddd;"> @drugAvailability._Drug.Name </td>
+                <td style="border: 1px solid #ddd;"> @drugAvailability._Pharmacy.Address </td>
+                <td style="border: 1px solid #ddd;"> @drugAvailability.Quantity </td>
+            </tr>
+        }
+    </tbody>
+</table>
